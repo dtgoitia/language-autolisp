@@ -1,0 +1,89 @@
+'name': 'AutoLISP'
+'scopeName': 'source.autolisp'
+comment: 'AutoLISP support for Atom'
+
+'fileTypes': [
+  'lsp'
+]
+
+foldingStartMarker: '\\(\\s*$'
+foldingStopMarker: '^\\s*\\)'
+patterns: [
+  {
+    match: "(;[^|]).*$\\n?"
+    captures:
+      "1":
+        name: 'punctuation.definition.comment.autolisp'
+    name: 'comment.line.semicolon.autolisp'
+  }
+  {
+    begin: ";\\|"
+    captures:
+      "0":
+        name: "punctuation.definition.comment.autolisp"
+    end: "\\|;"
+    name: "comment.multiline.autolisp"
+  }
+  {
+    # TODO: Add multiline definition
+    match: '(defun)\\s(c\\:[A-Za-z0-9_*]+|[A-Za-z0-9_*:]+)\\s*\\(\\s*([A-Za-z0-9_*:\\s]*)\\/([A-Za-z0-9_*:\\s]*)'
+    captures:
+      1:
+        name: 'keyword.autolisp'
+      2:
+        name: 'entity.name.function.autolisp'
+      3:
+        name: 'variable.autolisp'
+      4:
+        name: 'localvariable.autolisp' # Adequate scope to achieve convenient colouring not found yet
+  }
+  {
+    # TODO: Add multiline definition
+    match: '(defun)\\s(c\\:[A-Za-z0-9_*]+|[A-Za-z0-9_*:]+)\\s*\\(\\s*([A-Za-z0-9_*:\\s]*)'
+    captures:
+      1:
+        name: 'keyword.autolisp'
+      2:
+        name: 'entity.name.function.autolisp'
+      3:
+        name: 'variable.autolisp'
+  }
+  {
+    # TODO: Add multiline definition
+    match: '\\((setq)\\s([A-Za-z0-9]+)'
+    captures:
+      1:
+        name: 'keyword.autolisp'
+      2:
+        name: 'variable.autolisp'
+  }
+  {
+    match: '\\b(?i:if|cond)\\b'
+    name: 'keyword.control.autolisp'
+  }
+  {
+    match: '\\b(?i:t|T|nil)\\b'
+    name: 'constant.language.boolean.nil.autolisp'
+  }
+  {
+    match: '\\b((([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b'
+    name: 'constant.numeric.autolisp'
+  }
+  {
+    begin: '"'
+    beginCaptures:
+      0:
+        name: 'punctuation.definition.string.begin.autolisp'
+    end: '"'
+    endCaptures:
+      0:
+        name: 'punctuation.definition.string.end.autolisp'
+    name: 'string.quoted.double.autolisp'
+    patterns: [
+      {
+        match: '\\\\.'
+        name: 'constant.character.escape.autolisp'
+      }
+    ]
+  }
+]

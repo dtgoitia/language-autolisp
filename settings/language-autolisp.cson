@@ -1,0 +1,17 @@
+'.source.autolisp':
+  editor:
+    commentStart: '; '
+    tabLength: 2
+  "bracket-matcher":
+    autocompleteBrackets: true
+  autocomplete:
+    symbols:
+      keyword:
+        selector: ".keyword"
+        typePriority: 1
+      function:
+        selector: ".function"
+        typePriority: 2
+      variable:
+        selector: ".variable"
+        typePriority: 3

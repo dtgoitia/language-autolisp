@@ -66,9 +66,6 @@
   mapcar:
     prefix: 'mapcar'
     body: '(mapcar\n\t${1:function_to_apply}\n\t${2:list_where_to_apply_function}\n);END mapcar'
-  "vla-delete":
-    prefix: 'vladelete'
-    body: '(vla-delete ${1:VL_ent_name})'
   OK:
     prefix: 'ok'
     body: '(princ "\\\\nOK")'
@@ -93,3 +90,21 @@
   repeat:
     prefix: 'repeat'
     body: '(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat'
+
+# VLA functions
+
+  'vla-delete':
+    prefix: 'del'
+    body: '(vla-delete ${1:object})'
+  'vlax-get-acad-object':
+    prefix: 'top'
+    body: '(vlax-get-acad-object)'
+  'vlax-get-property':
+    prefix: 'getprop'
+    body: '(vlax-get-property ${1:object} ${2:property})'
+  'vlax-put-property':
+    prefix: 'putprop'
+    body: '(vlax-put-property ${1:object} ${2:property} \${3:value})'
+  'vlax-dump-object':
+    prefix: 'dump'
+    body: '(vlax-dump-object ${1:object})'

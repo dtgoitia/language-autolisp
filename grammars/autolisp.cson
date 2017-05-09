@@ -50,7 +50,7 @@ patterns: [
   }
   {
     # TODO: Add multiline definition
-    match: '\\((setq)\\s([A-Za-z0-9]+)'
+    match: '\\((setq)\\s([A-Za-z0-9_-]+)'
     captures:
       1:
         name: 'keyword.autolisp'

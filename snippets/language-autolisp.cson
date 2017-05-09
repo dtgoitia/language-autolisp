@@ -42,12 +42,6 @@
   progn:
     prefix: 'progn'
     body: '(progn\n\t$0\n);END progn'
-  "ename -> vla":
-    prefix: 'ename2vla'
-    body: '(vlax-ename->vla-object ${1:ent_name})'
-  "vla -> ename":
-    prefix: 'vla2ename'
-    body: '(vlax-vla-object->ename ${1:VL_ent_name})'
   princ:
     prefix: 'princ'
     body: '(princ $0)'
@@ -91,20 +85,38 @@
     prefix: 'repeat'
     body: '(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat'
 
-# VLA functions
+# VL, VLA and VLAX functions
 
   'vla-delete':
-    prefix: 'del'
+    prefix: 'vlaDel'
     body: '(vla-delete ${1:object})'
   'vlax-get-acad-object':
-    prefix: 'top'
+    prefix: 'vlaGetAcad'
     body: '(vlax-get-acad-object)'
+  'vla-get-activeDocument':
+    prefix: 'vlaGetActDoc'
+    body: '(vla-get-ActiveDocument ${1:acadObject})'
+  'vla-startUndoMark':
+    prefix: 'vlaStartUndo'
+    body: '(vla-startUndoMark ${1:documentObject})'
+  'vla-endUndoMark':
+    prefix: 'vlaEndUndo'
+    body: '(vla-endUndoMark ${1:documentObject})'
   'vlax-get-property':
     prefix: 'getprop'
-    body: '(vlax-get-property ${1:object} ${2:property})'
+    body: '(vlax-get-property ${1:object} ${2:propertyValue})'
   'vlax-put-property':
     prefix: 'putprop'
-    body: '(vlax-put-property ${1:object} ${2:property} \${3:value})'
+    body: '(vlax-put-property ${1:object} ${2:property} \${3:propertyValue})'
   'vlax-dump-object':
     prefix: 'dump'
     body: '(vlax-dump-object ${1:object})'
+  'vla-offset':
+    prefix: 'vlaOffset'
+    body: '(vla-offset ${1:object} ${2:offsetDistance})'
+  "ename -> vla":
+    prefix: 'ename2vla'
+    body: '(vlax-ename->vla-object ${1:ent_name})'
+  "vla -> ename":
+    prefix: 'vla2ename'
+    body: '(vlax-vla-object->ename ${1:VL_ent_name})'

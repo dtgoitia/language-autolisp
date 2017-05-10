@@ -126,6 +126,9 @@
   'vl-filename-directory':
     prefix: 'vlaFileDirectory'
     body: '(vl-filename-directory ${1:fileName})'
+  'vl-filename-extension':
+    prefix: 'vlaFileExtension'
+    body: '(vl-filename-extension ${1:fileName})'
 
 # Custom snippets
 

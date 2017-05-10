@@ -120,9 +120,12 @@
   'vla -> ename':
     prefix: 'vla2ename'
     body: '(vlax-vla-object->ename ${1:VL_ent_name})'
-  'vl-filename-base filename':
+  'vl-filename-base':
     prefix: 'vlaFileNameBase'
     body: '(vl-filename-base ${1:fileName})'
+  'vl-filename-directory':
+    prefix: 'vlaFileDirectory'
+    body: '(vl-filename-directory ${1:fileName})'
 
 # Custom snippets
 

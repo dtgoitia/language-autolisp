@@ -102,15 +102,6 @@
   'vla-endUndoMark':
     prefix: 'vlaEndUndo'
     body:   '(vla-endUndoMark ${1:documentObject})'
-  'vlax-get-property':
-    prefix: 'getprop'
-    body:   '(vlax-get-property ${1:object} ${2:propertyValue})'
-  'vlax-put-property':
-    prefix: 'putprop'
-    body:   '(vlax-put-property ${1:object} ${2:property} \${3:propertyValue})'
-  'vlax-dump-object':
-    prefix: 'dump'
-    body:   '(vlax-dump-object ${1:object})'
   'vla-offset':
     prefix: 'vlaOffset'
     body:   '(vla-offset ${1:object} ${2:offsetDistance})'
@@ -120,6 +111,20 @@
   'vla -> ename':
     prefix: 'vla2ename'
     body:   '(vlax-vla-object->ename ${1:VL_ent_name})'
+
+  # Property-handling
+  'vlax-get-property':
+    prefix: 'getprop'
+    body:   '(vlax-get-property ${1:object} ${2:propertyValue})'
+  'vlax-put-property':
+    prefix: 'putprop'
+    body:   '(vlax-put-property ${1:object} ${2:property} \${3:propertyValue})'
+  'vlax-dump-object':
+    prefix: 'dump'
+    body:   '(vlax-dump-object ${1:object})'
+  'vlax-property-available-p':
+    prefix: 'propAvailable'
+    body:   '(vlax-property-available-p ${1:object} ${2:property})'
 
   # Curve measurement
   'vlax-curve-getArea':

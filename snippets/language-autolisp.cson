@@ -114,9 +114,23 @@
   'vla-offset':
     prefix: 'vlaOffset'
     body: '(vla-offset ${1:object} ${2:offsetDistance})'
-  "ename -> vla":
+  'ename -> vla':
     prefix: 'ename2vla'
     body: '(vlax-ename->vla-object ${1:ent_name})'
-  "vla -> ename":
+  'vla -> ename':
     prefix: 'vla2ename'
     body: '(vlax-vla-object->ename ${1:VL_ent_name})'
+
+# Custom snippets
+
+  'single argument management':
+    prefix: 'SingleArg'
+    body: '''
+    (if ${1:variable}
+      (if (= '${2:varType} (type ${1:variable}))
+        single_function
+        (progn (princ "\\\\nERROR @ ${3:function} : ${1:variable} is not a ${2:varType}\\\\n") nil )
+      );END if
+      (progn (princ "\\\\nERROR @ ${3:function} : ${1:variable}=nil\\\\n") nil )
+    );END if
+    '''

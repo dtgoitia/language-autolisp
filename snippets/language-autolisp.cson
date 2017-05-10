@@ -189,3 +189,6 @@
       (progn (princ "\\\\nERROR @ ${3:function} : ${1:variable}=nil\\\\n") nil )
     );END if
     '''
+  'LM effectivename':
+    prefix: 'LM effective'
+    body:   '(LM:effectivename ${1:object})'

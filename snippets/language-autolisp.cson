@@ -27,9 +27,9 @@
       (defun c:xx ()
       \t$0
 
-      \t; v0.0 - _DATE_ - First issue
+      \t; v0.0 - ${1:_DATE_} - First issue
       \t; Author: David Torralba
-      \t; Last revision: _DATE_
+      \t; Last revision: ${1:_DATE_}
       )
     '''
   "setq block":

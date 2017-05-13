@@ -88,9 +88,6 @@
   'or':
     prefix: 'or'
     body:   '(or\n\t$0\n);END or'
-  'strcat':
-    prefix: 'strcat'
-    body:   '(strcat\n\t$0\n);END strcat'
   'cons':
     prefix: 'cons'
     body:   '(cons $0)'
@@ -191,17 +188,12 @@
 
 # Custom snippets
 
-  'single argument management':
-    prefix: 'SingleArg'
-    body:   '''
-    (if ${1:variable}
-      (if (= '${2:varType} (type ${1:variable}))
-        single_function
-        (progn (princ "\\\\nERROR @ ${3:function} : ${1:variable} is not a ${2:varType}\\\\n") nil )
-      );END if
-      (progn (princ "\\\\nERROR @ ${3:function} : ${1:variable}=nil\\\\n") nil )
-    );END if
-    '''
+  'argument management':
+    prefix: 'argMan'
+    body:   '(DT:Arg ${1:functionName} \'(${2:argumentList}))'
+  'argument':
+    prefix: 'arg'
+    body:   '(${1:argumentSymbol} \'${2:argumentType})$3'
   'LM effectivename':
     prefix: 'LM effective'
     body:   '(LM:effectivename ${1:object})'

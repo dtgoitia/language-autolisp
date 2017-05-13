@@ -98,6 +98,12 @@
     prefix: 'repeat'
     body:   '(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat'
 
+  # Function handling
+
+  'eval':
+    prefix: 'eval'
+    body:   '(eval ${1:expression})'
+
 # VL, VLA and VLAX functions
 
   'vla-delete':

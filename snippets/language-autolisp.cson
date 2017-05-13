@@ -48,6 +48,9 @@
   'test princ':
     prefix: 'princt'
     body:   '(princ "\\\\n${1:variable} = ")(princ ${1:variable})$2'
+  'test function princ':
+    prefix: 'princf'
+    body:   '(princ "\\\\n")(princ \'${1:function})(princ "\\\\n")(princ ${1:function})$2'
   'while':
     prefix: 'while'
     body:   '(while ${1:condition}\n\t${2:functions}\n);END while'

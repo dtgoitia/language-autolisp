@@ -189,6 +189,16 @@
     prefix: 'mkdir'
     body:   '(vl-mkdir ${1:fullPath})'
 
+  # Symbol handling
+
+  'vl-symbol-name':
+    prefix: 'vlSymbolName'
+    body:   '(vl-symbol-name ${1:symbol})'
+  'vl-princ-to-string':
+    prefix: 'vlPrincToString'
+    body:   '(vl-princ-to-string ${1:object})'
+
+
 # Custom snippets
 
   'argument management':

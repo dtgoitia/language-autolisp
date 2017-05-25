@@ -97,6 +97,12 @@
   'repeat':
     prefix: 'repeat'
     body:   '(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat'
+  'ssget AND':
+    prefix: 'ssAnd'
+    body:   '(-4 . \"<AND\")$0(-4 . \"AND>\")'
+  'ssget OR':
+    prefix: 'ssOr'
+    body:   '(-4 . \"<OR\")$0(-4 . \"OR>\")'
 
   # Function handling
 

@@ -215,7 +215,7 @@
 
   'argument management':
     prefix: 'argMan'
-    body:   '(DT:Arg ${1:functionName} \'(${2:argumentList}))'
+    body:   '(DT:Arg \'${1:functionName} \'(${2:argumentList}))'
   'argument':
     prefix: 'arg'
     body:   '(${1:argumentSymbol} \'${2:argumentType})$3'

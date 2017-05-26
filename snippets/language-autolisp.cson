@@ -140,10 +140,10 @@
   # Property-handling
   'vlax-get-property':
     prefix: 'getprop'
-    body:   '(vlax-get-property ${1:object} ${2:propertyValue})'
+    body:   '(vlax-get-property ${1:object} ${2:propertyName})'
   'vlax-put-property':
     prefix: 'putprop'
-    body:   '(vlax-put-property ${1:object} ${2:property} \${3:propertyValue})'
+    body:   '(vlax-put-property ${1:object} ${2:propertyName} \${3:propertyValue})'
   'vlax-dump-object':
     prefix: 'dump'
     body:   '(vlax-dump-object ${1:object})'

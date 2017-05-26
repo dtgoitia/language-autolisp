@@ -103,6 +103,13 @@
   'ssget OR':
     prefix: 'ssOr'
     body:   '(-4 . \"<OR\")$0(-4 . \"OR>\")'
+  'while grread':
+    prefix: 'grread'
+    body:   '''
+      (while (= 5 (car (setq gr (grread 't 13 0))))
+        ${1:functions}
+      );END while
+    '''
 
   # Function handling
 

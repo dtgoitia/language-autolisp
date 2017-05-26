@@ -186,8 +186,21 @@
     prefix: 'getStartPoint'
     body:   '(vlax-curve-getStartPoint ${1:object})'
 
-  # File handling
+  # Data conversion
+  'vlax-safearray->list':
+    prefix: 'vlaxSafearrayList '
+    body:   '(vlax-safearray->list ${1:variant})'
+  'vlax-safearray-type':
+    prefix: 'vlaxSafearrayType'
+    body:   '(vlax-safearray-type var)'
+  'vlax-variant-type':
+    prefix: 'vlaxVariantType'
+    body:   '(vlax-variant-type ${1:variant})'
+  'vlax-variant-value':
+    prefix: 'vlaxVariantValue'
+    body:   '(vlax-variant-value ${1:variant})'
 
+  # File handling
   'vl-filename-base':
     prefix: 'vlaFileNameBase'
     body:   '(vl-filename-base ${1:fileName})'

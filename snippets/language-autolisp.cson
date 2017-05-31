@@ -103,6 +103,12 @@
   'ssget OR':
     prefix: 'ssOr'
     body:   '(-4 . \"<OR\")$0(-4 . \"OR>\")'
+  'ssget NOT':
+    prefix: 'ssNot'
+    body:   '(-4 . \"<NOT\")$0(-4 . \"NOT>\")'
+  'ssget XOR':
+    prefix: 'ssXor'
+    body:   '(-4 . \"<XOR\")$0(-4 . \"XOR>\")'
   'while grread':
     prefix: 'grread'
     body:   '''

@@ -245,6 +245,9 @@
   'argument':
     prefix: 'arg'
     body:   '(${1:argumentSymbol} \'${2:argumentType})$3'
+  'print variable':
+    prefix: 'print'
+    body:   '(DT:PrintVar \'${1:var})'
   'LM effectivename':
     prefix: 'LM effective'
     body:   '(LM:effectivename ${1:object})'

@@ -236,7 +236,6 @@
     prefix: 'vlPrincToString'
     body:   '(vl-princ-to-string ${1:object})'
 
-
 # Custom snippets
 
   'argument management':
@@ -251,3 +250,12 @@
   'LM effectivename':
     prefix: 'LM effective'
     body:   '(LM:effectivename ${1:object})'
+  'LM VL Get Attribute Value':
+    prefix: 'lmGetAtt'
+    body:   '(LM:vl-getattributevalue ${1:object} ${2:attributeTag})'
+  'LM VL Get All Attribute Value':
+    prefix: 'lmGetAtts'
+    body:   '(LM:vl-getattributes ${1:object})'
+  'LM VL Set Attribute Value':
+    prefix: 'lmSetAtt'
+    body:   '(LM:vl-setattributevalue ${1:object} ${2:attributeTag} ${3:attributeValue})'

@@ -247,6 +247,10 @@
   'print variable':
     prefix: 'print'
     body:   '(DT:PrintVar \'${1:var})'
+  '(DT:Error sym str)':
+    prefix:  'error'
+    body:    '(DT:Error \'${1:functionName} ${2:errorMessage})'
+    description: 'Print message on console correctly formated'
   'LM effectivename':
     prefix: 'LM effective'
     body:   '(LM:effectivename ${1:object})'

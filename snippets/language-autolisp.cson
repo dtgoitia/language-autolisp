@@ -72,6 +72,24 @@
     prefix: 'ssXor'
     body:   '(-4 . \"<XOR\")$0(-4 . \"XOR>\")'
 
+  # String handling
+  '(strcat string ... string_n)':
+    prefix:  'strcat'
+    body:    '(strcat ${1:string})'
+    description:        'Returns a string that is the concatenation of multiple strings'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-4430B1BF-DBB5-49D1-98F9-711B480976A1-htm.html'
+  '(strlen string)':
+    prefix:  'strlen'
+    body:    '(strlen ${1:string})'
+    description:        'Returns an integer that is the number of characters in a string'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F16AAC5F-5C87-4DC5-A7B9-BDCD25DC507A-htm.html'
+  '(substr string start [length])':
+    prefix:  'substr'
+    body:    '(substr ${1:string} ${2:start} ${3:[Length]}) '
+    description:        'Returns a substring of a string'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2-htm.html'
+
+
   # Function handling
   'eval':
     prefix: 'eval'

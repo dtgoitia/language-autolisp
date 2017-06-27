@@ -15,13 +15,20 @@
   'subcond':
     prefix: 'scond'
     body:   '(${1:condition}\n\t${2:functions}\n);END subcond'
-  'setq block':
+  '(setq sym expr)':
     prefix: 'setq'
+    body:   '(setq $0)'
+    description: 'Sets the value of a symbol or symbols to associated expressions. Inline style'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA-htm.html'
+  '(setq sym exp)':
+    prefix: 'setqb'
     body:   '''
       (setq
       \t$0
       );END setq
     '''
+    description: 'Sets the value of a symbol or symbols to associated expressions. Block style'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-2F4B7A7B-7B6F-4E1C-B32E-677506094EAA-htm.html'
   'progn':
     prefix: 'progn'
     body:   '(progn\n\t$0\n);END progn'
@@ -85,7 +92,7 @@
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F16AAC5F-5C87-4DC5-A7B9-BDCD25DC507A-htm.html'
   '(substr string start [length])':
     prefix:  'substr'
-    body:    '(substr ${1:string} ${2:start} ${3:[Length]}) '
+    body:    '(substr ${1:string} ${2:start} ${3:[stringLength]}) '
     description:        'Returns a substring of a string'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2-htm.html'
 
@@ -95,6 +102,17 @@
     prefix: 'eval'
     body:   '(eval ${1:expression})'
 
+  # Symbol Table and Dictionary-Handling
+  '(tblsearch table element)':
+    prefix:  'tblsearch'
+    body:    '(tblsearch ${1:tableString} ${2:element})'
+    description:        'Searches a symbol table for a symbol name. Available tables: APPID, BLOCK, DIMSTYLE, LAYER, LTYPE, STYLE, UCS, VIEW, VPORT'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925-htm.html'
+
+  # Others
+  'lambda':
+    prefix: 'lambda'
+    body:   '\'(lambda (${1:var}) ${2:statements})'
 
 
 # VL, VLA and VLAX functions

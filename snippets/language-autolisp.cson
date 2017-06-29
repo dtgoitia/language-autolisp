@@ -95,6 +95,81 @@
     body:    '(substr ${1:string} ${2:start} ${3:[stringLength]}) '
     description:        'Returns a substring of a string'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2-htm.html'
+  '(read [string])':
+    prefix: 'read'
+    body: '(read ${1:string})'
+    description: 'Returns the first list or atom obtained from a string'
+
+  '(strcase string [which])':
+    prefix: 'strcase'
+    body: '(strcase ${1:string})'
+    description: 'Returns a string where all alphabetic characters have been converted to uppercase or lowercase'
+
+  '(vl-prin1-to-string object)':
+    prefix: 'vl-prin1-to-string'
+    body: '(vl-prin1-to-string ${1:object})'
+    description: 'Returns the string representation of any LISP object as if it were output by the prin1 function'
+
+  '(vl-princ-to-string object)':
+    prefix: 'vl-princ-to-string'
+    body: '(vl-princ-to-string ${1:object})'
+    description: 'Returns the string representation of any LISP object as if it were output by the princ function'
+
+  '(vl-string->list string)':
+    prefix: 'vl-string->list'
+    body: '(vl-string->list ${1:string})'
+    description: 'Converts a string into a list of character codes'
+
+  '(vl-string-elt string position)':
+    prefix: 'vl-string-elt'
+    body: '(vl-string-elt ${1:string} ${2:position})'
+    description: 'Returns the ASCII representation of the character at a specified position in a string'
+
+  '(vl-string-left-trim character-set string)':
+    prefix: 'vl-string-left-trim'
+    body: '(vl-string-left-trim ${1:character-set} ${2:string})'
+    description: 'Removes the specified characters from the beginning of a string'
+
+  '(vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])':
+    prefix: 'vl-string-mismatch'
+    body: '(vl-string-mismatch ${1:str1} ${2:str2})'
+    description: 'Returns the length of the longest common prefix for two strings, starting at specified positions'
+
+  '(vl-string-position char-code str [ start-pos [from-end-p]])':
+    prefix: 'vl-string-position'
+    body: '(vl-string-position ${1:char-code} ${2:string})'
+    description: 'Looks for a character with the specified ASCII code in a string'
+
+  '(vl-string-right-trim character-set string)':
+    prefix: 'vl-string-right-trim'
+    body: '(vl-string-right-trim ${1:character-set} ${2:string})'
+    description: 'Removes the specified characters from the end of a string'
+
+  '(vl-string-search pattern string [ start-pos])':
+    prefix: 'vl-string-search'
+    body: '(vl-string-search ${1:pattern} ${2:string})'
+    description: 'Searches for the specified pattern in a string'
+
+  '(vl-string-subst new-str pattern string [start-pos])':
+    prefix: 'vl-string-subst'
+    body: '(vl-string-subst ${1:new-str} ${2:pattern} ${3:string})'
+    description: 'Substitutes one string for another, within a string'
+
+  '(vl-string-translate source-set dest-set str)':
+    prefix: 'vl-string-translate'
+    body: '(vl-string-translate ${1:source-set} ${2:dest-set} ${3:string})'
+    description: 'Replaces characters in a string with a specified set of characters'
+
+  '(vl-string-trim char-set str)':
+    prefix: 'vl-string-trim'
+    body: '(vl-string-trim ${1:char-set} ${2:string})'
+    description: 'Removes the specified characters from the beginning and end of a string'
+
+  '(wcmatch string pattern)':
+    prefix: 'wcmatch'
+    body: '(wcmatch ${1:string} ${2:pattern})'
+    description: 'Performs a wild-card pattern match on a string'
+
 
 
   # Function handling
@@ -220,9 +295,6 @@
     body:   '(vl-mkdir ${1:fullPath})'
 
   # Symbol handling
-  'vl-symbol-name':
-    prefix: 'vlSymbolName'
+  'vl-symbol-name symbol':
+    prefix: 'vl-symbol-name'
     body:   '(vl-symbol-name ${1:symbol})'
-  'vl-princ-to-string':
-    prefix: 'vlPrincToString'
-    body:   '(vl-princ-to-string ${1:object})'

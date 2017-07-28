@@ -80,6 +80,17 @@
     body:   '(-4 . \"<XOR\")$0(-4 . \"XOR>\")'
 
   # String handling
+
+  '(read [string])':
+    prefix: 'read'
+    body: '(read ${1:string})'
+    description: 'Returns the first list or atom obtained from a string'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-5B50BB3E-C244-46E8-85D8-6A2D48B1FE51-htm.html'
+  '(strcase string [which])':
+    prefix: 'strcase'
+    body: '(strcase ${1:string})'
+    description: 'Returns a string where all alphabetic characters have been converted to uppercase or lowercase'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-108DCD2C-6597-4548-856D-937787AFE5E0-htm.html'
   '(strcat string ... string_n)':
     prefix:  'strcat'
     body:    '(strcat ${1:string})'
@@ -95,87 +106,200 @@
     body:    '(substr ${1:string} ${2:start} ${3:[stringLength]}) '
     description:        'Returns a substring of a string'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-36F8701B-7AB7-47BE-AC31-8508A2DF46A2-htm.html'
-  '(read [string])':
-    prefix: 'read'
-    body: '(read ${1:string})'
-    description: 'Returns the first list or atom obtained from a string'
-
-  '(strcase string [which])':
-    prefix: 'strcase'
-    body: '(strcase ${1:string})'
-    description: 'Returns a string where all alphabetic characters have been converted to uppercase or lowercase'
-
-  '(vl-prin1-to-string object)':
-    prefix: 'vl-prin1-to-string'
-    body: '(vl-prin1-to-string ${1:object})'
-    description: 'Returns the string representation of any LISP object as if it were output by the prin1 function'
-
-  '(vl-princ-to-string object)':
-    prefix: 'vl-princ-to-string'
-    body: '(vl-princ-to-string ${1:object})'
-    description: 'Returns the string representation of any LISP object as if it were output by the princ function'
-
   '(vl-string->list string)':
     prefix: 'vl-string->list'
     body: '(vl-string->list ${1:string})'
     description: 'Converts a string into a list of character codes'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-3C1B15F7-CF97-4783-A725-231C3A1ABB11-htm.html'
+  '(vl-prin1-to-string object)':
+    prefix: 'vl-prin1-to-string'
+    body: '(vl-prin1-to-string ${1:object})'
+    description: 'Returns the string representation of any LISP object as if it were output by the prin1 function'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-4AA25012-28D5-4723-8AD3-B8BF9AE62425-htm.html'
+  '(vl-princ-to-string object)':
+    prefix: 'vl-princ-to-string'
+    body: '(vl-princ-to-string ${1:object})'
+    description: 'Returns the string representation of any LISP object as if it were output by the princ function'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-33B0CA43-84F2-46DE-88BE-8FFF22C83FAD-htm.html'
   '(vl-string-elt string position)':
     prefix: 'vl-string-elt'
     body: '(vl-string-elt ${1:string} ${2:position})'
     description: 'Returns the ASCII representation of the character at a specified position in a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-5A68B31E-1EA7-434A-93FF-C05D9514A55B-htm.html'
   '(vl-string-left-trim character-set string)':
     prefix: 'vl-string-left-trim'
     body: '(vl-string-left-trim ${1:character-set} ${2:string})'
     description: 'Removes the specified characters from the beginning of a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-24CB6E8B-9F4F-46DD-AB28-6481B86BA82A-htm.html'
   '(vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])':
     prefix: 'vl-string-mismatch'
     body: '(vl-string-mismatch ${1:str1} ${2:str2})'
     description: 'Returns the length of the longest common prefix for two strings, starting at specified positions'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-D1EA6F47-146E-44BC-BBCA-40B7A874C0B8-htm.html'
   '(vl-string-position char-code str [ start-pos [from-end-p]])':
     prefix: 'vl-string-position'
     body: '(vl-string-position ${1:char-code} ${2:string})'
     description: 'Looks for a character with the specified ASCII code in a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-2B0BF48B-FA26-431B-8EC3-DD0BD9F147A0-htm.html'
   '(vl-string-right-trim character-set string)':
     prefix: 'vl-string-right-trim'
     body: '(vl-string-right-trim ${1:character-set} ${2:string})'
     description: 'Removes the specified characters from the end of a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-532CDF83-7A7F-4B54-8362-F5B7FB35C220-htm.html'
   '(vl-string-search pattern string [ start-pos])':
     prefix: 'vl-string-search'
     body: '(vl-string-search ${1:pattern} ${2:string})'
     description: 'Searches for the specified pattern in a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-4E7AE1DA-1ED5-4D96-A7D3-34241AA94AA6-htm.html'
   '(vl-string-subst new-str pattern string [start-pos])':
     prefix: 'vl-string-subst'
     body: '(vl-string-subst ${1:new-str} ${2:pattern} ${3:string})'
     description: 'Substitutes one string for another, within a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-D8EE91DC-D4DB-43E0-9AFE-5FA166C0896D-htm.html'
   '(vl-string-translate source-set dest-set str)':
     prefix: 'vl-string-translate'
     body: '(vl-string-translate ${1:source-set} ${2:dest-set} ${3:string})'
     description: 'Replaces characters in a string with a specified set of characters'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-57060085-C79D-4613-B438-506AC443BCE7-htm.html'
   '(vl-string-trim char-set str)':
     prefix: 'vl-string-trim'
     body: '(vl-string-trim ${1:char-set} ${2:string})'
     description: 'Removes the specified characters from the beginning and end of a string'
-
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-FF1DA441-C9D8-4C99-BC6E-B2A72B562389-htm.html'
   '(wcmatch string pattern)':
     prefix: 'wcmatch'
     body: '(wcmatch ${1:string} ${2:pattern})'
     description: 'Performs a wild-card pattern match on a string'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD-htm.html'
 
-
+  # List Manipulation Functions
+  '(subst newitem olditem lst)':
+    prefix:  'subst'
+    body:    '(subst ${1:newitem} ${2:olditem} ${3:lst})'
+    description:        'Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item '
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-25214E69-090A-45C3-8210-6D9801255E44-htm.html'
 
   # Function handling
-  'eval':
+  '(eval expression)':
     prefix: 'eval'
     body:   '(eval ${1:expression})'
+
+  # Object handling
+  '(dumpallproperties ename [context])':
+    prefix:  'dumpallproperties'
+    body:    '(dumpallproperties ${1:ename} ${2:context})'
+    description:        'Retrieves an entity’s supported properties'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-A65FBCCF-CC5D-47E8-9117-D577D9CB9D8A-htm.html'
+  '(entdel ename)':
+    prefix: 'entdel'
+    body:   '(entdel ${1:ename})'
+    description: 'Deletes objects (entities) or restores previously deleted objects'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70-htm.html'
+  '(entget ename [applist])':
+    prefix:  'entget'
+    body:    '(entget ${1:ename} ${2:[applist]})'
+    description:        'Retrieves an object\'s (entity\'s) definition data'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-12540DAE-C84B-4BDB-AEEC-DDFE5BE3C42A-htm.html'
+  '(entlast)':
+    prefix:  'entlast'
+    body:    '(entlast)'
+    description:        'Returns the name of the last nondeleted main object (entity) in the drawing'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-75DBA9B2-034B-4377-A4E2-21D37B298D86-htm.html'
+  '(entmake [elist])':
+    prefix:  'entmake'
+    body:    '(entmake ${1:elist})'
+    description:        'Creates a new entity in the drawing'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-D47983BA-1E5D-417D-85B8-6F3DE5F506BA-htm.html'
+  '(entmakex [elist])':
+    prefix:  'entmakex'
+    body:    '(entmakex ${1:elist})'
+    description:        ' Makes a new object or entity, gives it a handle and entity name (but does not assign an owner), and then returns the new entity name'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-3F9A2EB2-082D-49DD-8EFD-DAD8F6E9AA6A-htm.html'
+  '(entmod elist)':
+    prefix:  'entmod'
+    body:    '(entmod ${1:elist})'
+    description:        'Modifies the definition data of an object (entity)'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-C7D27797-247E-49B9-937C-0D8C58F4C832-htm.html'
+  '(entnext ename)':
+    prefix:  'entnext'
+    body:    '(entnext ${1:ename})'
+    description:        'Returns the name of the next object (entity) in the drawing'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-65924CF5-0C51-4E36-8B38-7A5513951A04-htm.html'
+  '(entupd ename)':
+    prefix:  'entupd'
+    body:    '(entupd ${1:ename})'
+    description:        'Updates the screen image of an object (entity)'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-78313F48-676D-49D7-842A-288DD347A783-htm.html'
+  '(getpropertyvalue ename propertyname)':
+    prefix:  'getpropertyvalue'
+    body:    '(getpropertyvalue ${1:ename} ${2:propertyname})'
+    description:        'Returns the current value of an entity’s property'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-8E5913FC-09ED-4C70-AFB7-2431C062E899-htm.html'
+  '(handent handle)':
+    prefix:  'handent'
+    body:    '(handent ${1:handle})'
+    description:        'description'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-AF6DD533-1A24-4687-96EB-F03F26050C07-htm.html'
+  '(ispropertyreadonly ename propertyname)':
+    prefix:  'ispropertyreadonly'
+    body:    '(ispropertyreadonly ${1:ename} ${2:propertyname})'
+    description:        'Returns the read-only state of an entity’s property '
+    descriptionMoreURL: 'https://knowledge.autodesk.com/support/autocad/getting-started/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-1DE8095D-5755-4889-BFB7-C13045B7BC81-htm.html'
+  '(setpropertyvalue ename propertyname value)':
+    prefix:  'setpropertyvalue'
+    body:    '(setpropertyvalue ${1:ename} ${2:propertyname} ${3:value})'
+    description:        'Sets the property value for an entity'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/support/autocad/getting-started/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-8F32FD8C-D81A-4DCA-B455-9D560CF17246-htm.html'
+  '(vlax-dump-object object [flag])':
+    prefix:  'vlax-dump-object'
+    body:    '(vlax-dump-object ${1:object} ${2:[flag]})'
+    description:        'Lists an object\'s properties, and optionally, the methods that apply to the object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-BCE56B30-54A6-42F9-8910-81AF2B7B9AA8-htm.html'
+  '(vlax-erased-p object)':
+    prefix:  'vlax-erased-p'
+    body:    '(vlax-erased-p ${1:object})'
+    description:        'Determines whether an object was erased'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-423F047A-F8B8-4DD0-ABEC-52E3C7B336B5-htm.html'
+  '(vlax-get-acad-object)':
+    prefix:  'vlax-get-acad-object'
+    body:    '(vlax-get-acad-object)'
+    description:        'Retrieves the top level AutoCAD application object for the current AutoCAD session'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-53DB599B-641D-45DD-A201-604942A4596C-htm.html'
+  '(vlax-method-applicable-p object method)':
+    prefix:  'vlax-method-applicable-p'
+    body:    '(vlax-method-applicable-p ${1:object} ${2:method})'
+    description:        'Determines if an object supports a particular method '
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-63B81424-11BA-4CB3-A783-514031A2271D-htm.html'
+  '(vlax-object-released-p object)':
+    prefix:  'vlax-object-released-p'
+    body:    '(vlax-object-released-p ${1:object})'
+    description:        'Determines if an object has been released'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-23DA7B30-FBB5-40DC-A93E-E1FC2A5D8B6F-htm.html'
+  '(vlax-property-available-p object property [check-modify])':
+    prefix:  'vlax-property-available-p'
+    body:    '(vlax-property-available-p ${1:object} ${2:property} ${3:[check-modify]})'
+    description:        'Determines if an object has a specified property'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-E8A5B009-46D6-4BA7-9655-88104F8BE792-htm.html'
+  '(vlax-read-enabled-p object)':
+    prefix:  'vlax-read-enabled-p'
+    body:    '(vlax-read-enabled-p ${1:object})'
+    description:        'Determines if an object can be read'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-8BBBF683-BA93-4942-9B8C-AD43D490E52A-htm.html'
+  '(vlax-release-object object)':
+    prefix:  'vlax-release-object'
+    body:    '(vlax-release-object ${1:object})'
+    description:        'Releases a drawing object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-85FA59E7-9EC9-4690-8CEE-318BF542C0E6-htm.html'
+  '(vlax-typeinfo-available-p object)':
+    prefix:  'vlax-typeinfo-available-p'
+    body:    '(vlax-typeinfo-available-p ${1:object})'
+    description:        'Determines whether TypeLib information is present for the specified type of object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-1DAB4433-A0FA-43EA-9022-68C8E468B1EA-htm.html'
+  '(vlax-write-enabled-p object)':
+    prefix:  'vlax-write-enabled-p'
+    body:    '(vlax-write-enabled-p ${1:object})'
+    description:        'Determines if an AutoCAD drawing object can be modified'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-67DAD30A-B359-4566-9B11-C6203EB71247-htm.html'
 
   # Symbol Table and Dictionary-Handling
   '(tblsearch table element)':
@@ -183,6 +307,18 @@
     body:    '(tblsearch ${1:tableString} ${2:element})'
     description:        'Searches a symbol table for a symbol name. Available tables: APPID, BLOCK, DIMSTYLE, LAYER, LTYPE, STYLE, UCS, VIEW, VPORT'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-2AEB84A6-E3D0-4DD9-A29C-54D4099ED925-htm.html'
+
+  # Arithmetic Functions
+  '(min [number number ...])':
+    prefix:  'min'
+    body:    '(min ${1:number})'
+    description:        'A numeric value. If any number argument is a real, a real is returned; otherwise, an integer is returned. If no argument is supplied, min returns 0.'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F401AD55-57B2-4B1A-9704-D7D8D45AE465-htm.html'
+  '(max [number number ...])':
+    prefix:  'max'
+    body:    '(max ${1:number})'
+    description:        'A number. If any of the arguments are real numbers, a real is returned; otherwise an integer is returned. If no argument is supplied, max returns 0.'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-057C56D3-8A15-406B-95CA-68DD859E64FB-htm.html'
 
   # Others
   'lambda':
@@ -192,109 +328,103 @@
 
 # VL, VLA and VLAX functions
 
-  'vla-delete':
-    prefix: 'vlaDel'
+  '(vla-delete object)':
+    prefix: 'vla-delete'
     body:   '(vla-delete ${1:object})'
-  'vlax-get-acad-object':
-    prefix: 'vlaGetAcad'
-    body:   '(vlax-get-acad-object)'
-  'vla-get-activeDocument':
-    prefix: 'vlaGetActDoc'
+  '(vla-get-activeDocument acadObject)':
+    prefix: 'vla-get-activeDocument'
     body:   '(vla-get-ActiveDocument ${1:acadObject})'
-  'vla-startUndoMark':
-    prefix: 'vlaStartUndo'
+  '(vla-startUndoMark documentObject)':
+    prefix: 'vla-startUndoMark'
     body:   '(vla-startUndoMark ${1:documentObject})'
-  'vla-endUndoMark':
-    prefix: 'vlaEndUndo'
+  '(vla-endUndoMark documentObject)':
+    prefix: 'vla-endUndoMark'
     body:   '(vla-endUndoMark ${1:documentObject})'
-  'vla-offset':
-    prefix: 'vlaOffset'
+  '(vla-offset object offsetDistance)':
+    prefix: 'vla-offset'
     body:   '(vla-offset ${1:object} ${2:offsetDistance})'
-  'ename -> vla':
-    prefix: 'ename2vla'
-    body:   '(vlax-ename->vla-object ${1:ent_name})'
-  'vla -> ename':
-    prefix: 'vla2ename'
-    body:   '(vlax-vla-object->ename ${1:VL_ent_name})'
+  '(vlax-ename->vla-object ename)':
+    prefix: 'vlax-ename->vla-object'
+    body:   '(vlax-ename->vla-object ${1:ename})'
+  '(vlax-vla-object->ename object)':
+    prefix: 'vlax-vla-object->ename'
+    body:   '(vlax-vla-object->ename ${1:object})'
 
   # Property-handling
-  'vlax-get-property':
-    prefix: 'getprop'
+  '(vlax-get-property object propertyName)':
+    prefix: 'vlax-get-property'
     body:   '(vlax-get-property ${1:object} ${2:propertyName})'
-  'vlax-put-property':
-    prefix: 'putprop'
+  '(vlax-put-property object propertyName propertyValue)':
+    prefix: 'vlax-put-property'
     body:   '(vlax-put-property ${1:object} ${2:propertyName} \${3:propertyValue})'
-  'vlax-dump-object':
-    prefix: 'dump'
+  '(vlax-dump-object object)':
+    prefix: 'vlax-dump-object'
     body:   '(vlax-dump-object ${1:object})'
-  'vlax-property-available-p':
-    prefix: 'propAvailable'
-    body:   '(vlax-property-available-p ${1:object} ${2:property})'
 
   # Curve measurement
-  'vlax-curve-getArea':
-    prefix: 'getArea'
+  '(vlax-curve-getArea object)':
+    prefix: 'vlax-curve-getArea'
     body:   '(vlax-curve-getArea ${1:object})'
-  'vlax-curve-getClosestPointTo':
-    prefix: 'getClosestPointTo'
+  '(vlax-curve-getClosestPointTo object point)':
+    prefix: 'vlax-curve-getClosestPointTo'
     body:   '(vlax-curve-getClosestPointTo ${1:object} ${2:point})'
-  'vlax-curve-getDistAtParam':
-    prefix: 'getDistAtParam'
+  '(vlax-curve-getDistAtParam object param)':
+    prefix: 'vlax-curve-getDistAtParam'
     body:   '(vlax-curve-getDistAtParam ${1:object} ${2:param})'
-  'vlax-curve-getDistAtPoint':
-    prefix: 'getDistAtPoint'
+  '(vlax-curve-getDistAtPoint object point)':
+    prefix: 'vlax-curve-getDistAtPoint'
     body:   '(vlax-curve-getDistAtPoint ${1:object} ${2:point})'
-  'vlax-curve-getEndParam':
-    prefix: 'getEndParam'
+  '(vlax-curve-getEndParam object)':
+    prefix: 'vlax-curve-getEndParam'
     body:   '(vlax-curve-getEndParam ${1:object})'
-  'vlax-curve-getEndPoint':
-    prefix: 'getEndPoint'
+  '(vlax-curve-getEndPoint object)':
+    prefix: 'vlax-curve-getEndPoint'
     body:   '(vlax-curve-getEndPoint ${1:object})'
-  'vlax-curve-getParamAtDist':
-    prefix: 'getParamAtDist'
+  '(vlax-curve-getParamAtDist object point)':
+    prefix: 'vlax-curve-getParamAtDist'
     body:   '(vlax-curve-getParamAtDist ${1:object} ${2:point})'
-  'vlax-curve-getParamAtPoint':
-    prefix: 'getParamAtPoint'
+  '(vlax-curve-getParamAtPoint object distance)':
+    prefix: 'vlax-curve-getParamAtPoint'
     body:   '(vlax-curve-getParamAtPoint ${1:object} ${2:distance})'
-  'vlax-curve-getPointAtDist':
-    prefix: 'getPointAtDist'
+  '(vlax-curve-getPointAtDist object distance)':
+    prefix: 'vlax-curve-getPointAtDist'
     body:   '(vlax-curve-getPointAtDist ${1:object} ${2:distance})'
-  'vlax-curve-getPointAtParam':
-    prefix: 'getPointAtParam'
+  '(vlax-curve-getPointAtParam object param)':
+    prefix: 'vlax-curve-getPointAtParam'
     body:   '(vlax-curve-getPointAtParam ${1:object} ${2:param})'
-  'vlax-curve-getStartPoint':
-    prefix: 'getStartPoint'
+  '(vlax-curve-getStartPoint object)':
+    prefix: 'vlax-curve-getStartPoint'
     body:   '(vlax-curve-getStartPoint ${1:object})'
 
   # Data conversion
-  'vlax-safearray->list':
-    prefix: 'vlaxSafearrayList '
+  '(vlax-safearray->list variant)':
+    prefix: 'vlax-safearray->list '
     body:   '(vlax-safearray->list ${1:variant})'
-  'vlax-safearray-type':
-    prefix: 'vlaxSafearrayType'
-    body:   '(vlax-safearray-type var)'
-  'vlax-variant-type':
-    prefix: 'vlaxVariantType'
+  '(vlax-safearray-type variant)':
+    prefix: 'vlax-safearray-type'
+    body:   '(vlax-safearray-type ${1:variant})'
+  '(vlax-variant-type variant)':
+    prefix: 'vlax-variant-type'
     body:   '(vlax-variant-type ${1:variant})'
-  'vlax-variant-value':
-    prefix: 'vlaxVariantValue'
+  '(vlax-variant-value variant)':
+    prefix: 'vlax-variant-value'
     body:   '(vlax-variant-value ${1:variant})'
 
   # File handling
-  'vl-filename-base':
-    prefix: 'vlaFileNameBase'
+  '(vl-filename-base fileName)':
+    prefix: 'vl-filename-base'
     body:   '(vl-filename-base ${1:fileName})'
-  'vl-filename-directory':
-    prefix: 'vlaFileDirectory'
+  '(vl-filename-directory fileName)':
+    prefix: 'vl-filename-directory'
     body:   '(vl-filename-directory ${1:fileName})'
-  'vl-filename-extension':
-    prefix: 'vlaFileExtension'
+  '(vl-filename-extension fileName)':
+    prefix: 'vl-filename-extension'
     body:   '(vl-filename-extension ${1:fileName})'
-  'vl-mkdir':
-    prefix: 'mkdir'
+  '(vl-mkdir fullPath)':
+    prefix: 'vl-mkdir'
     body:   '(vl-mkdir ${1:fullPath})'
 
   # Symbol handling
-  'vl-symbol-name symbol':
+  '(vl-symbol-name symbol)':
     prefix: 'vl-symbol-name'
     body:   '(vl-symbol-name ${1:symbol})'

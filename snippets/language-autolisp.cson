@@ -12,9 +12,6 @@
   'cond':
     prefix: 'cond'
     body:   '(cond\n\t(${1:condition}\n\t\t${2:functions}\n\t);END subcond\n);END cond'
-  'subcond':
-    prefix: 'scond'
-    body:   '(${1:condition}\n\t${2:functions}\n);END subcond'
   '(setq sym expr)':
     prefix: 'setq'
     body:   '(setq $0)'
@@ -41,19 +38,6 @@
   'polar':
     prefix: 'polar'
     body:   '(polar ${1:point} ${2:angle} ${3:distance})'
-  'append':
-    prefix: 'append'
-    body:   '(append\n\t$0\n);END append'
-  'mapcar':
-    prefix: 'mapcar'
-    body:   '(mapcar\n\t${1:function_to_apply}\n\t${2:list_where_to_apply_function}\n);END mapcar'
-  'foreach':
-    prefix: 'foreach'
-    body:   '''
-    (foreach a ${1:list}
-      ${2:functions}
-    );END foreach
-    '''
   'and':
     prefix: 'and'
     body:   '(and\n\t$0\n);END and'
@@ -66,18 +50,6 @@
   'repeat':
     prefix: 'repeat'
     body:   '(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat'
-  'ssget AND':
-    prefix: 'ssAnd'
-    body:   '(-4 . \"<AND\")$0(-4 . \"AND>\")'
-  'ssget OR':
-    prefix: 'ssOr'
-    body:   '(-4 . \"<OR\")$0(-4 . \"OR>\")'
-  'ssget NOT':
-    prefix: 'ssNot'
-    body:   '(-4 . \"<NOT\")$0(-4 . \"NOT>\")'
-  'ssget XOR':
-    prefix: 'ssXor'
-    body:   '(-4 . \"<XOR\")$0(-4 . \"XOR>\")'
 
   # String handling
 
@@ -173,6 +145,70 @@
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-EC257AF7-72D4-4B38-99B6-9B09952A53AD-htm.html'
 
   # List Manipulation Functions
+  '(append lst)':
+    prefix: 'append'
+    body:   '(append\n\t${1:list}\n);END append'
+    description:        'Takes any number of lists and appends them together as one list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-952B175A-D565-43A4-9208-0E6A27A5E742-htm.html'
+  '(assoc element alist)':
+    prefix:  'assoc'
+    body:    '(assoc ${1:element} ${2:alist})'
+    description:        'Searches an association list for an element and returns that association list entry'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-46309786-DAF6-4C28-8448-599FBC8A4F6A-htm.html'
+  '(car lst)':
+    prefix:  'car'
+    body:    '(car ${1:list})'
+    description:        'Returns the first element of a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-2DD1AF33-415C-4C1A-9631-DA958134C53A-htm.html'
+  '(cadr list)':
+    prefix:  'cadr'
+    body:    '(cadr ${1:list})'
+    description:        'Returns the second element of a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F8E9E4F0-218D-4587-9D7E-922BE57C9F9B-htm.html'
+  '(caddr list)':
+    prefix:  'caddr'
+    body:    '(caddr ${1:list})'
+    description:        'Returns the third element of a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-0E81B9F0-7AAD-4BB4-98EB-378AEBE5C4CF-htm.html'
+  '(cdr lst)':
+    prefix:  'cdr'
+    body:    '(cdr ${1:list})'
+    description:        'Returns the specified list, except for the first element of the list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F9CD8FF3-022A-4323-BAE7-390174451537-htm.html'
+  '(cons newFirstElement listOrAtom)':
+    prefix:  'cons'
+    body:    '(cons ${1:newFirstElement} ${2:listOrAtom})'
+    description:        'Adds an element to the beginning of a list, or constructs a dotted list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-33B418E7-DB3D-4CBE-954E-F070F0A7CB2B-htm.html'
+  '(foreach name list [expr...])':
+    prefix: 'foreach'
+    body:   '''
+    (foreach a ${1:list}
+      ${2:expressions}
+    );END foreach
+    '''
+    description:        'Evaluates expressions for all members of a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-BE6A23C4-4E18-45A6-854E-2DE9574A6925-htm.html'
+  '(last lst)':
+    prefix:  'last'
+    body:    '(last ${1:list})'
+    description:        'Returns the last element in a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-463C97F2-B72F-44C6-B19B-659D231AA836-htm.html'
+  '(length lst)':
+    prefix:  'length'
+    body:    '(length ${1:list})'
+    description:        'Returns an integer indicating the number of elements in a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-DD227383-1895-46B6-A83B-43000FCC1018-htm.html'
+  '(mapcar function list1... listn)':
+    prefix: 'mapcar'
+    body:   '(mapcar\n\t${1:function_to_apply}\n\t${2:list_where_to_apply_function}\n);END mapcar'
+    description:        'Returns a list that is the result of executing a function with a list (or lists) supplied as arguments to the function'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-8802AE73-1A05-457E-8A51-09677C23E26E-htm.html'
+  '(nth n lst)':
+    prefix:  'nth'
+    body:    '(nth ${index} ${2:list})'
+    description:        'Returns the nth element of a list'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-0330FE17-6E15-4E34-BB50-E9040EABDADB-htm.html'
   '(subst newitem olditem lst)':
     prefix:  'subst'
     body:    '(subst ${1:newitem} ${2:olditem} ${3:lst})'

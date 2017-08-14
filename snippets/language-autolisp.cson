@@ -51,6 +51,48 @@
     prefix: 'repeat'
     body:   '(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat'
 
+  # Selection set manipulation
+  '(ssadd [ename [ss]])':
+    prefix:  'ssadd'
+    body:    '(ssadd ${1:ename} ${2:[ss]})'
+    description:        'Adds an object (entity) to a selection set, or creates a new selection set'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-22337977-82F2-4394-B209-39DE2B4B9E86-htm.html'
+  '(ssdel ename ss)':
+    prefix:  'ssdel'
+    body:    '(ssdel ${1:ename} ${2:ss})'
+    description:        'Deletes an object (entity) from a selection set'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F84DB8CE-B535-453D-977D-AE9D7AD2D7AA-htm.html'
+  '(ssgetfirst)':
+    prefix:  'ssgetfirst'
+    body:    '(ssgetfirst)'
+    description:        'Determines which objects are selected and gripped'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F18CB64C-1B18-46F3-BAD4-24D83214CE0D-htm.html'
+  '(sslength ss)':
+    prefix:  'sslength'
+    body:    '(sslength ${1:ss})'
+    description:        'Returns an integer containing the number of objects (entities) in a selection set'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-034B9EC8-0945-48A0-802A-9725DDBA0EF2-htm.html'
+  '(ssmemb ename ss)':
+    prefix:  'ssmemb'
+    body:    '(ssmemb ${1:ename} ${2:ss})'
+    description:        'Tests whether an object (entity) is a member of a selection set'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-8F291146-6A1A-4A31-9380-C800590BF27D-htm.html'
+  '(ssname ss index)':
+    prefix:  'ssname'
+    body:    '(ssname ${1:ss} ${2:index})'
+    description:        'Returns the object (entity) name of the indexed element of a selection set'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-EFB83751-9AC5-4C52-AD3D-D971BC560C15-htm.html'
+  '(ssnamex ss [index])':
+    prefix:  'ssnamex'
+    body:    '(ssnamex ${1:ss} ${2:[index]})'
+    description:        'Retrieves information about how a selection set was created'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-0A0E41A1-8F97-4B2E-A6A6-FF6223C6E999-htm.html'
+  '(sssetfirst gripset [pickset])':
+    prefix:  'sssetfirst'
+    body:    '(sssetfirst nil ${1:[pickset]})'
+    description:        'Sets which objects are selected and gripped. NOTE: gripset is always ignored.'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-4076CD9D-1C66-4C73-ACC0-3A6CD0B0D2D8-htm.html'
+
   # String handling
 
   '(read [string])':
@@ -160,21 +202,41 @@
     body:    '(car ${1:list})'
     description:        'Returns the first element of a list'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-2DD1AF33-415C-4C1A-9631-DA958134C53A-htm.html'
+  '(caar lst)':
+    prefix:  'caar'
+    body:    '(caar ${1:list})'
+    description: 'Returns the 1st subelement of the 1st element of a list'
   '(cadr list)':
     prefix:  'cadr'
     body:    '(cadr ${1:list})'
-    description:        'Returns the second element of a list'
+    description:        'Returns the 2nd element of a list'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F8E9E4F0-218D-4587-9D7E-922BE57C9F9B-htm.html'
   '(caddr list)':
     prefix:  'caddr'
     body:    '(caddr ${1:list})'
-    description:        'Returns the third element of a list'
+    description:        'Returns the 3rd element of a list'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-0E81B9F0-7AAD-4BB4-98EB-378AEBE5C4CF-htm.html'
+  '(cadddr list)':
+    prefix:  'caddr'
+    body:    '(caddr ${1:list})'
+    description:        'Returns the 4th element of a list'
   '(cdr lst)':
     prefix:  'cdr'
     body:    '(cdr ${1:list})'
     description:        'Returns the specified list, except for the first element of the list'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-F9CD8FF3-022A-4323-BAE7-390174451537-htm.html'
+  '(cddr lst)':
+    prefix:  'cddr'
+    body:    '(cddr ${1:list})'
+    description:        'Returns the specified list, except for the first 2 elements of the list'
+  '(cdddr lst)':
+    prefix:  'cdddr'
+    body:    '(cdddr ${1:list})'
+    description:        'Returns the specified list, except for the first 3 elements of the list'
+  '(cddddr lst)':
+    prefix:  'cddddr'
+    body:    '(cddddr ${1:list})'
+    description:        'Returns the specified list, except for the first 4 elements of the list'
   '(cons newFirstElement listOrAtom)':
     prefix:  'cons'
     body:    '(cons ${1:newFirstElement} ${2:listOrAtom})'
@@ -204,11 +266,21 @@
     body:   '(mapcar\n\t${1:function_to_apply}\n\t${2:list_where_to_apply_function}\n);END mapcar'
     description:        'Returns a list that is the result of executing a function with a list (or lists) supplied as arguments to the function'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-8802AE73-1A05-457E-8A51-09677C23E26E-htm.html'
+  '(member expr lst)':
+    prefix:  'member'
+    body:    '(member ${1:expression} ${2:list})'
+    description:        'Searches a list for an occurrence of an expression and returns the remainder of the list, starting with the first occurrence of the expression'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-A2B08751-D966-44F5-9B02-1AAC4DA6AF59-htm.html'
   '(nth n lst)':
     prefix:  'nth'
-    body:    '(nth ${index} ${2:list})'
+    body:    '(nth ${1:index} ${2:list})$0'
     description:        'Returns the nth element of a list'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-0330FE17-6E15-4E34-BB50-E9040EABDADB-htm.html'
+  '(reverse lst)':
+    prefix:  'reverse'
+    body:    '(reverse ${1:lst})'
+    description:        'Returns a list with its elements reversed'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2018/ENU/AutoCAD-AutoLISP-Reference/files/GUID-7669E8F1-2A4F-42C7-AAA8-74D1300F9744-htm.html'
   '(subst newitem olditem lst)':
     prefix:  'subst'
     body:    '(subst ${1:newitem} ${2:olditem} ${3:lst})'
@@ -379,23 +451,38 @@
   '(vla-offset object offsetDistance)':
     prefix: 'vla-offset'
     body:   '(vla-offset ${1:object} ${2:offsetDistance})'
+
+  # Property-handling
   '(vlax-ename->vla-object ename)':
     prefix: 'vlax-ename->vla-object'
     body:   '(vlax-ename->vla-object ${1:ename})'
+    description: 'Transforms an entity to a VLA-object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-BD451263-76D5-4A93-B50A-3C27E89A0AD4-htm.html'
   '(vlax-vla-object->ename object)':
     prefix: 'vlax-vla-object->ename'
     body:   '(vlax-vla-object->ename ${1:object})'
-
-  # Property-handling
+    description: 'Transforms a VLA-object to an AutoLISP entity'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-9127B839-D275-473F-A166-59BE94AEFACB-htm.html'
   '(vlax-get-property object propertyName)':
     prefix: 'vlax-get-property'
     body:   '(vlax-get-property ${1:object} ${2:propertyName})'
+    description: 'Retrieves a VLA-object\'s property'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-B3F22E35-4666-452F-89C8-5BC15B9E9463-htm.html'
+  '(vlax-property-available-p obj prop)':
+    prefix:  'vlax-property-available-p'
+    body:    '(vlax-property-available-p ${1:object} \'${2:propertyName})'
+    description:        'Determines if an object has a specified property'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-E8A5B009-46D6-4BA7-9655-88104F8BE792-htm.html'
   '(vlax-put-property object propertyName propertyValue)':
     prefix: 'vlax-put-property'
-    body:   '(vlax-put-property ${1:object} ${2:propertyName} \${3:propertyValue})'
+    body:   '(vlax-put-property ${1:object} \'${2:propertyName} ${3:propertyValue})'
+    description: 'Sets the property of an ActiveX object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-C56E4AF5-A763-4B9D-AB35-C863D02FB93B-htm.html'
   '(vlax-dump-object object)':
     prefix: 'vlax-dump-object'
     body:   '(vlax-dump-object ${1:object})'
+    description: 'Lists an object\'s properties, and optionally, the methods that apply to the object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-BCE56B30-54A6-42F9-8910-81AF2B7B9AA8-htm.html'
 
   # Curve measurement
   '(vlax-curve-getArea object)':

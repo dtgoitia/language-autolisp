@@ -292,6 +292,71 @@
     prefix: 'eval'
     body:   '(eval ${1:expression})'
 
+  # File handling
+  '(close file-desc)':
+    prefix:  'close'
+    body:    '(close ${1:file-desc})'
+    description:        'Closes an open file'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-5308ADB6-7C46-43BE-8B6C-B32FBA8982DB-htm.html'
+  '(findfile filename)':
+    prefix:  'findfile'
+    body:    '(findfile ${1:filename})'
+    description:        'Searches the AutoCAD library and trusted paths for the specified file or directory'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-D671F67D-F92B-41FF-B9FA-A48EF52CF607-htm.html'
+  '(findtrustedfile filename)':
+    prefix:  'findtrustedfile'
+    body:    '(findtrustedfile ${1:filename})'
+    description:        'Searches the AutoCAD trusted locations for the specified file'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-456F421A-DED1-4A87-9D4A-8434D1E997E1-htm.html'
+  '(open filename mode)':
+    prefix:  'open'
+    body:    '(open ${1:filename} ${2:mode})'
+    description:        'Opens a file for access by the AutoLISP I/O functions'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-089A323F-21FF-4337-99A9-375758E23BA4-htm.html'
+  '(read-char [file-desc])':
+    prefix:  'read-char'
+    body:    '(read-char ${1:[file-desc]})'
+    description:        'Returns the decimal ASCII code representing the character read from the keyboard input buffer or from an open file'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-7E94BD14-F018-47D0-88DA-2B08DE32DB2C-htm.html'
+  '(read-line [file-desc])':
+    prefix:  'read-line'
+    body:    '(read-line ${1:[file-desc]})'
+    description:        'Reads a string from the keyboard or from an open file, until an end-of-line marker is encountered'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-AC74D827-0969-4888-91C0-C3149DEC3659-htm.html'
+  # vl-directory-files
+  # vl-file-copy
+  # vl-file-delete
+  # vl-file-directory-p
+  # vl-file-rename
+  # vl-file-size
+  # vl-file-systime
+  # vl-filename-base
+  # vl-filename-directory
+  # vl-filename-extension
+  # vl-filename-mktemp
+  '(vl-filename-base fileName)':
+    prefix: 'vl-filename-base'
+    body:   '(vl-filename-base ${1:fileName})'
+  '(vl-filename-directory fileName)':
+    prefix: 'vl-filename-directory'
+    body:   '(vl-filename-directory ${1:fileName})'
+  '(vl-filename-extension fileName)':
+    prefix: 'vl-filename-extension'
+    body:   '(vl-filename-extension ${1:fileName})'
+  '(vl-mkdir fullPath)':
+    prefix: 'vl-mkdir'
+    body:   '(vl-mkdir ${1:fullPath})'
+  '(write-char num [file-desc])':
+    prefix:  'write-char'
+    body:    '(write-char ${1:num} ${2:[file-desc]})'
+    description:        'Writes one character to the screen or to an open file'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-83AA4A55-C6A0-447B-A106-717E08D2EAF1-htm.html'
+  '(write-line str [file-desc])':
+    prefix:  'write-line'
+    body:    '(write-line ${1:str} ${2:[file-desc]})'
+    description:        'Writes a string to the screen or to an open file'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-CB4F3ABC-F0F6-41DA-A911-75B90D9F974A-htm.html'
+
   # Object handling
   '(dumpallproperties ename [context])':
     prefix:  'dumpallproperties'
@@ -532,20 +597,6 @@
   '(vlax-variant-value variant)':
     prefix: 'vlax-variant-value'
     body:   '(vlax-variant-value ${1:variant})'
-
-  # File handling
-  '(vl-filename-base fileName)':
-    prefix: 'vl-filename-base'
-    body:   '(vl-filename-base ${1:fileName})'
-  '(vl-filename-directory fileName)':
-    prefix: 'vl-filename-directory'
-    body:   '(vl-filename-directory ${1:fileName})'
-  '(vl-filename-extension fileName)':
-    prefix: 'vl-filename-extension'
-    body:   '(vl-filename-extension ${1:fileName})'
-  '(vl-mkdir fullPath)':
-    prefix: 'vl-mkdir'
-    body:   '(vl-mkdir ${1:fullPath})'
 
   # Symbol handling
   '(vl-symbol-name symbol)':

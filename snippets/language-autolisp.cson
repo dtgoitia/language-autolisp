@@ -530,7 +530,7 @@
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-9127B839-D275-473F-A166-59BE94AEFACB-htm.html'
   '(vlax-get-property object propertyName)':
     prefix: 'vlax-get-property'
-    body:   '(vlax-get-property ${1:object} ${2:propertyName})'
+    body:   '(vlax-get-property ${1:object} \'${2:propertyName})'
     description: 'Retrieves a VLA-object\'s property'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-B3F22E35-4666-452F-89C8-5BC15B9E9463-htm.html'
   '(vlax-property-available-p obj prop)':
@@ -540,7 +540,7 @@
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-E8A5B009-46D6-4BA7-9655-88104F8BE792-htm.html'
   '(vlax-put-property object propertyName propertyValue)':
     prefix: 'vlax-put-property'
-    body:   '(vlax-put-property ${1:object} \'${2:propertyName} ${3:propertyValue})'
+    body:   '(vlax-put-property ${1:object} \'${2:propertyName} \'${3:propertyValue})'
     description: 'Sets the property of an ActiveX object'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-C56E4AF5-A763-4B9D-AB35-C863D02FB93B-htm.html'
   '(vlax-dump-object object)':

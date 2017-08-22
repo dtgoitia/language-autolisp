@@ -93,8 +93,56 @@
     description:        'Sets which objects are selected and gripped. NOTE: gripset is always ignored.'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-4076CD9D-1C66-4C73-ACC0-3A6CD0B0D2D8-htm.html'
 
-  # String handling
+  # Error handling
+  '(alert msg)':
+    prefix:  'alert'
+    body:    '(alert ${1:msg})'
+    description:        'Displays a dialog box containing an error or warning message'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-1BBC35EB-232F-4593-8B70-D9C473B7BC05-htm.html'
+  '(exit)':
+    prefix:  'exit'
+    body:    '(exit)'
+    description:        'Forces the current application to quit'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-677B9EC8-C35D-4736-AE59-1BDB12E540AF-htm.html'
+  '(*pop-error-mode*)':
+    prefix:  '*pop-error-mode*'
+    body:    '(*pop-error-mode*)'
+    description:        'Error-handling function that ends the previous call to *push-error-using-command* or *push-error-using-stack*'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-60AFEFAD-1DF5-448F-A2E9-D7260DB279E4-htm.html'
+  '(*push-error-using-command*)':
+    prefix:  '*push-error-using-command*'
+    body:    '(*push-error-using-command*)'
+    description:        'Error-handling function that indicates the use of the command function within a custom *error* handler'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-620E034A-9151-427F-B6F5-B360D14DA925-htm.html'
+  '(*push-error-using-stack*)':
+    prefix:  '*push-error-using-stack*'
+    body:    '(*push-error-using-stack*)'
+    description:        'Error-handling function that indicates the use of variables from the AutoLISP stack within a custom *error* handler'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-C28420C9-2210-4EEC-AA73-2962999D1BC1-htm.html'
+  '(quit)':
+    prefix:  'quit'
+    body:    '(quit)'
+    description:        'Forces the current application to quit'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-E15E32AE-D1FB-41EC-B2C7-AFFD4095842C-htm.html'
+  '(vl-catch-all-apply \'function list)':
+    prefix:  'vl-catch-all-apply'
+    body:    '(vl-catch-all-apply \'${1:function} ${2:list})'
+    description:        'Passes a list of arguments to a specified function and traps any exceptions'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-E08CC2A6-787A-422F-8BD3-18812996794C-htm.html'
+  '(vl-catch-all-error-message error-obj)':
+    prefix:  'vl-catch-all-error-message'
+    body:    '(vl-catch-all-error-message ${1:errorObject})'
+    description:        'Returns a string from an error object'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-C703867D-7B64-480D-BE34-45A63BA02AB7-htm.html'
+  '(vl-catch-all-error-p arg)':
+    prefix:  'vl-catch-all-error-p'
+    body:    '(vl-catch-all-error-p ${1:arg})'
+    description:        'Determines whether an argument is an error object returned from vl-catch-all-apply'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-14CADE53-54C6-437D-8F3C-14845E08591C-htm.html'
 
+
+
+  # String handling
   '(read [string])':
     prefix: 'read'
     body: '(read ${1:string})'

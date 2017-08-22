@@ -287,6 +287,18 @@
     description:        'Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item '
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-25214E69-090A-45C3-8210-6D9801255E44-htm.html'
 
+  # Conversion
+  '(ascii str)':
+    prefix:  'ascii'
+    body:    '(ascii ${1:str})'
+    description:        'Returns the conversion of the first character of a string into its ASCII character code (an integer)'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-03E1B586-72CB-4AB6-A151-B581AE530318-htm.html'
+  '(chr int)':
+    prefix:  'chr'
+    body:    '(chr ${1:int})'
+    description:        'Converts an integer representing an ASCII character code into a single-character string'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-5846BFDD-AE5F-4B2F-99E0-0B9DBA667739-htm.html'
+
   # Function handling
   '(eval expression)':
     prefix: 'eval'

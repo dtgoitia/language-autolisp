@@ -54,7 +54,7 @@
   # Selection set manipulation
   '(ssadd [ename [ss]])':
     prefix:  'ssadd'
-    body:    '(ssadd ${1:ename} ${2:[ss]})'
+    body:    '(ssadd${1: [ename]}${2: [ss]})'
     description:        'Adds an object (entity) to a selection set, or creates a new selection set'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-22337977-82F2-4394-B209-39DE2B4B9E86-htm.html'
   '(ssdel ename ss)':
@@ -459,7 +459,7 @@
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-AF320BD5-C83C-4EA0-983E-1EC885F5FC70-htm.html'
   '(entget ename [applist])':
     prefix:  'entget'
-    body:    '(entget ${1:ename} ${2:[applist]})'
+    body:    '(entget ${1:ename}${2:[ applist]})'
     description:        'Retrieves an object\'s (entity\'s) definition data'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-12540DAE-C84B-4BDB-AEEC-DDFE5BE3C42A-htm.html'
   '(entlast)':

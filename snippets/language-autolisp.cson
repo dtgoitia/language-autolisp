@@ -93,6 +93,35 @@
     description:        'Sets which objects are selected and gripped. NOTE: gripset is always ignored.'
     descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/AutoCAD-AutoLISP/files/GUID-4076CD9D-1C66-4C73-ACC0-3A6CD0B0D2D8-htm.html'
 
+  # User Input Functions
+  '(entsel [msg])':
+    prefix:  'entsel'
+    body:    '(entsel${1: [msg]})'
+    description:        'Prompts the user to select a single object (entity) by specifying a point'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-9D4CF74D-8B8B-4D66-A952-564AFBA254E7-htm.html'
+# getangle
+# getcorner
+# getdist
+# getfiled
+# getint
+# getkword
+  '(getkword [msg])':
+    prefix:  'getkword'
+    body:    '(getkword${1: [msg]})'
+    description:        'description'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-9F940144-0D7B-4DA1-BF50-BBF8FB8DFF21-htm.html'
+# getorient
+# getpoint
+# getreal
+# getstring
+  '(initget [bits] [keywords])':
+    prefix:  'initget'
+    body:    '(initget${1: [bits]}${2: [keywords]})'
+    description:        'Establishes keywords for use by the next user-input function call'
+    descriptionMoreURL: 'https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-9ED8841B-5C1D-4B3F-9F3B-84A4408A6BBF-htm.html'
+# nentsel
+# nentselp
+
   # Error handling
   '(alert msg)':
     prefix:  'alert'
